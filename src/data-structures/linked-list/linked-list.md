@@ -1,7 +1,8 @@
 
 
 ## Linked list
-[![N|Solid](https://res.cloudinary.com/dvj2hbywq/image/upload/v1590572188/Group_14_5_bvpwu0.png)](https://res.cloudinary.com/dvj2hbywq/image/upload/v1590572188/Group_14_5_bvpwu0.png)
+![Linked List](./images/linked-list.png)
+
 - Danh sách liên kết là một cấu trúc dữ liệu tuyến tính tương tự như một mảng. Tuy nhiên, không giống như mảng, các phần tử không được lưu trữ ở một vị trí hoặc chỉ mục bộ nhớ cụ thể.  Đúng hơn là mỗi phần tử là một đối tượng riêng biệt chứa một con trỏ hoặc một liên kết tới đối tượng tiếp theo trong danh sách đó.
 - Mỗi phần tử (thường được gọi là nút) chứa hai mục: dữ liệu được lưu trữ và liên kết đến nút tiếp theo. Dữ liệu có thể là bất kỳ loại dữ liệu hợp lệ nào. Bạn có thể thấy điều này được minh họa trong sơ đồ dưới đây.
 - Điểm vào danh sách liên kết được gọi là phần đầu. Phần đầu là tham chiếu đến nút đầu tiên trong danh sách liên kết. Nút cuối cùng trong danh sách trỏ đến null. Nếu danh sách trống thì phần đầu là tham chiếu rỗng.

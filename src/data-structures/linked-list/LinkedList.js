@@ -6,6 +6,24 @@ export default class LinkedList {
   }
 
   /**
+   * @param {*} value
+   */
+  append(value) {
+    const node = new ListNode(value);
+
+    if (this.head === null) {
+      this.head = node;
+    } else {
+      let curr = this.head;
+
+      while (curr.next) {
+        curr = curr.next;
+      }
+      curr.next = node;
+    }
+  }
+
+  /**
    * @returns size of linked list
    */
   size() {
@@ -33,22 +51,19 @@ export default class LinkedList {
       throw new Error('Linked list is null');
     }
 
-    if (index < 0) {
-      throw new Error('Position must be greater or equal 0');
+    if (index > this.size() || index < 0) {
+      throw new Error('Position out of size Linked List');
     }
 
-    if (index > this.size()) {
-      throw new Error('Position out of size Linked list');
-    }
-
-    let count = 0;
-    let curr, prev;
     const node = new ListNode(value);
 
     if (index === 0) {
       node.next = this.head;
       this.head = node;
     } else {
+      let count = 0;
+      let curr, prev;
+
       curr = this.head;
 
       while (count < index) {
@@ -61,13 +76,65 @@ export default class LinkedList {
       prev.next = node;
     }
   }
+
+  /**
+   *
+   * @param {*} index
+   */
+  removeFrom(index) {
+    if (this.head === null) {
+      throw new Error('Linked list is null');
+    }
+
+    if (index > this.size() || index < 0) {
+      throw new Error('Position out of size Linked List');
+    }
+
+    let curr, prev;
+    curr = this.head;
+
+    if (index === 0) {
+      this.head = curr.next;
+    } else {
+      let count = 0;
+
+      while (count < index) {
+        count++;
+        prev = curr;
+        curr = curr.next;
+      }
+
+      prev.next = curr.next;
+    }
+  }
+
+  /**
+   * @param {*} value 
+   */
+
+  removeValue(value) {
+    if (this.head === null) {
+      throw new Error('Linked list is empty');
+    }
+
+    if (!value) {
+      throw new Error('Value remove')
+    }
+
+    let curr = this.head;
+    let prev = null;
+
+    while (curr) {
+      if (curr.data === value) {
+        if (prev === null) {
+          this.head = curr.next;
+        } else {
+          prev.next = curr.next;
+        }
+      }
+      prev = curr;
+      curr = curr.next;
+    }
+
+  }
 }
-
-// {"head":{"data":1,"next":{"data":2,"next":{"data":3,"next":null}}}}
-
-// curr = {"data":1,"next":{"data":2,"next":null}};
-
-// count:0 < index:1 => count: 1, prev: {"data":1,"next":{"data":2,"next":null}}, curr: {"data":2,"next":{"data":3,"next":null}
-// count:1 < index:2 => count: 2, prev: {"data":2,"next":{"data":3,"next":null}, curr: {"data":3,"next":null}
-
-// node: {data: a, next: {"data":3,"next":null}}, prev: {"data":2,"next": {data: a, next: {"data":3,"next":null}}

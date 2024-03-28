@@ -28,7 +28,7 @@ export default class LinkedList {
    */
   size() {
     if (this.head === null) {
-      throw new Error('Linked list is null');
+      return 0;
     }
 
     let count = 0;

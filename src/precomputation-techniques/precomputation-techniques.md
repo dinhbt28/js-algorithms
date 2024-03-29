@@ -15,8 +15,8 @@ Precomputation techniques đề cập đến quá trình tính toán trước v�
   Ví dụ mảng có n phần tử array[n] với T trường hợp muốn lấy thông tin trong O(1) 
   1. Sum/ Xor tất cả các phần tử của mảng từ trái qua phải. 
   2. Nhỏ nhất/Lớn nhất phần tử từ trái đến vị trí ‘i’.
-
-  `
+  
+  ```
     const prefixSum = new Array(5).fill(0);
     const prefixXor = new Array(5).fill(0);
     const minLeft = new Array(5).fill(0);
@@ -44,5 +44,5 @@ Precomputation techniques đề cập đến quá trình tính toán trước v�
     console.log("Prefix XOR:", prefixXor);
     console.log("Min Left:", minLeft);
     console.log("Max Left:", maxLeft);
-      
-  `
+  ```
+

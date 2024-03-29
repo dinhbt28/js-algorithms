@@ -118,7 +118,7 @@ export default class LinkedList {
     }
 
     if (!value) {
-      throw new Error('Value remove')
+      throw new Error('Value remove is empty')
     }
 
     let curr = this.head;
